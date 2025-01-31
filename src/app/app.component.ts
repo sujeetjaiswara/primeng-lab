@@ -5,6 +5,7 @@ import {
   inject,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { MenuItem, MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
@@ -15,7 +16,7 @@ import { DatePickerModule } from 'primeng/datepicker';
 import { Dialog } from 'primeng/dialog';
 import { DrawerModule } from 'primeng/drawer';
 import { InputTextModule } from 'primeng/inputtext';
-import { Knob } from 'primeng/knob';
+// import { Knob } from 'primeng/knob';
 import { RatingModule } from 'primeng/rating';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ToastModule } from 'primeng/toast';
@@ -27,7 +28,7 @@ import { ToastModule } from 'primeng/toast';
     DatePickerModule,
     FormsModule,
     RatingModule,
-    Knob,
+    // Knob,
     SplitButtonModule,
     ToastModule,
     DrawerModule,
@@ -36,6 +37,7 @@ import { ToastModule } from 'primeng/toast';
     InputTextModule,
     CanvasJSAngularChartsModule,
     CheckboxModule,
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

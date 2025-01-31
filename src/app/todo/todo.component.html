@@ -1,0 +1,56 @@
+<div class="container max-w-[600px] my-[2rem] mx-auto p-[1rem]">
+  <h1 class="font-medium text-xl mb-1">
+    Todo List
+    <span class="text-sm text-gray-500">
+      ({{ remainingTodos() }} remaining)
+    </span>
+  </h1>
+
+  <div class="flex gap-2 mb-4">
+    <input
+      pInputText
+      type="text"
+      [(ngModel)]="newTodo"
+      (keyup.enter)="addTodo()"
+      placeholder="What needs to be done?"
+      class="flex-1"
+    />
+    <p-button (click)="addTodo()" [disabled]="!newTodo" label="Add"></p-button>
+  </div>
+
+  <ul class="list-none p-0 m-0">
+    @for (todo of todos(); track todo.id) {
+    <li
+      [class.completed]="todo.completed"
+      class="flex items-center p-[0.5rem] mb-[0.5rem] bg-gray-50 rounded-md"
+    >
+      <p-checkbox
+        [ngModel]="todo.completed"
+        [binary]="true"
+        (change)="toggleTodo(todo.id)"
+      />
+      <span class="ms-2">{{ todo.text }}</span>
+      <p-button
+        class="ml-auto"
+        icon="pi pi-times"
+        [rounded]="true"
+        [text]="true"
+        [raised]="false"
+        severity="danger"
+        size="small"
+        (click)="removeTodo(todo.id)"
+      />
+    </li>
+    } @empty {
+    <p class="text-gray-600 text-center p-[1rem]">
+      No todos found. Add one above!
+    </p>
+    }
+  </ul>
+
+  @if (totalTodos() > 0) {
+  <div class="mt-[1rem] text-center text-gray-600 text-sm">
+    Total: {{ totalTodos() }} | Remaining: {{ remainingTodos() }}
+  </div>
+  }
+</div>
