@@ -1,6 +1,5 @@
 <div class="container mx-auto w-11/12 p-6">
   <div class="flex flex-col gap-4">
-    <!-- 
     <p-button label="Toggle theme" class="me-2" (onClick)="toggleDarkMode()" />
 
     <div class="flex items-center leading-none">
@@ -32,20 +31,20 @@
     />
 
     <p-splitbutton label="Primary" [model]="items" raised />
-    <p-splitbutton label="Primary" [model]="items" rounded /> -->
+    <p-splitbutton label="Primary" [model]="items" rounded />
 
     <!-- Show drawer -->
-    <!-- <div>
+    <div>
       <button
         pButton
         icon="pi pi-plus"
         label="Show Profile"
         (click)="visible = true"
       ></button>
-    </div> -->
+    </div>
 
     <!-- Show dialog -->
-    <!-- <p-button (click)="showDialog()" label="Edit Profile" /> -->
+    <p-button (click)="showDialog()" label="Edit Profile" />
   </div>
 
   <!-- <div class="md:w-[50rem] mt-4">
@@ -113,7 +112,6 @@
       ></button>
     </div>
   </ng-template>
-  <!-- Start of Selection -->
 </p-drawer>
 
 <router-outlet></router-outlet>
